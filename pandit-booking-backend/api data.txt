@@ -1,0 +1,105 @@
+### 📌 **Complete API List for Your Pandit Booking & Puja Management App** 🚀  
+
+Below is a **detailed list** of all APIs, their purposes, and endpoints.
+
+---
+
+# 🔐 **1️⃣ Authentication APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `POST` | `/api/auth/register` | Register a new user | Public |
+| `POST` | `/api/auth/login` | User login & get token | Public |
+| `POST` | `/api/auth/logout` | Logout the user | Authenticated Users |
+| `GET` | `/api/auth/me` | Get logged-in user details | Authenticated Users |
+
+---
+
+# 👤 **2️⃣ User APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/users/profile` | Get logged-in user profile | Authenticated Users |
+| `PUT` | `/api/users/profile` | Update user profile (name, phone) | Authenticated Users |
+| `PUT` | `/api/users/change-password` | Change user password | Authenticated Users |
+
+---
+
+# 🛒 **3️⃣ Booking APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/bookings/user` | Get user’s past bookings | Authenticated Users |
+| `POST` | `/api/bookings` | Create a new booking (with payment) | Authenticated Users |
+| `POST` | `/api/bookings/cancel/:id` | Cancel a booking & process refund | Authenticated Users |
+| `POST` | `/api/bookings/complete/:id` | Mark booking as completed (Pandit only) | Pandit Only |
+| `PUT` | `/api/bookings/update/:id` | Admin updates booking status | Admin Only |
+
+---
+
+# 💳 **4️⃣ Payment & Wallet APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/wallet` | Get user’s wallet balance | Authenticated Users |
+| `POST` | `/api/wallet/deposit` | Add funds to wallet (Stripe/Razorpay) | Authenticated Users |
+| `POST` | `/api/wallet/withdraw` | Withdraw earnings (Pandit/Vendor) | Pandit & Vendor Only |
+| `POST` | `/api/wallet/pay` | Process a booking payment | Authenticated Users |
+
+---
+
+# 🏪 **5️⃣ Vendor APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/vendors` | Get all vendors | Public |
+| `PUT` | `/api/vendors/profile` | Update vendor profile | Vendor Only |
+
+---
+
+# 🛍️ **6️⃣ Product APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/products` | Get all products | Public |
+| `GET` | `/api/products/:id` | Get product details | Public |
+| `POST` | `/api/products` | Add a new product | Vendor Only |
+| `PUT` | `/api/products/:id` | Update product details | Vendor Only |
+| `DELETE` | `/api/products/:id` | Delete a product | Vendor Only |
+
+---
+
+# ⭐ **7️⃣ Review APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `POST` | `/api/reviews/pandit/:panditId` | Add a review for a Pandit | Authenticated Users (After Booking) |
+| `GET` | `/api/reviews/pandit/:panditId` | Get reviews for a Pandit | Public |
+| `POST` | `/api/reviews/product/:productId` | Add a review for a Product | Authenticated Users (After Purchase) |
+| `GET` | `/api/reviews/product/:productId` | Get reviews for a Product | Public |
+
+---
+
+# 📩 **8️⃣ Notification APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `POST` | `/api/notifications/email` | Send email notification | Admin Only |
+| `POST` | `/api/notifications/sms` | Send SMS notification | Admin Only |
+| `POST` | `/api/notifications/whatsapp` | Send WhatsApp notification | Admin Only |
+
+---
+
+# 🎩 **9️⃣ Pandit APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/pandits/dashboard` | Get Pandit Dashboard | Pandit Only |
+| `GET` | `/api/pandits/bookings` | Get Pandit’s bookings | Pandit Only |
+| `GET` | `/api/pandits/wallet` | Get Pandit’s wallet balance | Pandit Only |
+| `POST` | `/api/pandits/availability` | Set Pandit’s availability | Pandit Only |
+
+---
+
+# 🛠 **🔟 Admin APIs**
+| **Method** | **Endpoint** | **Description** | **Access** |
+|------------|-------------|----------------|------------|
+| `GET` | `/api/admin/dashboard` | Get admin dashboard | Admin Only |
+| `GET` | `/api/admin/users` | Get all users | Admin Only |
+| `DELETE` | `/api/admin/users/:id` | Delete a user | Admin Only |
+| `GET` | `/api/admin/bookings` | Get all bookings | Admin Only |
+| `GET` | `/api/admin/wallet-summary` | Get total platform earnings | Admin Only |
+
+---
+ 
